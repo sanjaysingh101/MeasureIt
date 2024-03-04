@@ -13,7 +13,12 @@ public class ARFeatheredPlaneMeshVisualizer : MonoBehaviour
     [Tooltip("The width of the texture feathering (in world units).")]
     [SerializeField]
     float m_FeatheringWidth = 0.2f;
+    private void Start()
+    {
+        UIManager uIManager = FindObjectOfType<UIManager>();
 
+        uIManager.debugText.text = (uIManager.planeInitialized + 1).ToString();
+     }
     /// <summary>
     /// The width of the texture feathering (in world units).
     /// </summary>

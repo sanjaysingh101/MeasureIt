@@ -181,5 +181,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5d8e3f87e1ab04baaf216ff7e77d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 2.5
+  time: 1
   objectToEnable: {fileID: 4575886800315502677}
