@@ -12,6 +12,7 @@ public class TextPlacementObject : MonoBehaviour
     public TextMeshPro distanceText;
     public LineRenderer LR;
     public float distFromCamera;
+    [SerializeField] private Vector3 directionToFace;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,13 +45,29 @@ public class TextPlacementObject : MonoBehaviour
             else
             {
                 distance = 39.370f*((finalpoint - initialpoint).magnitude);
-                distanceText.text = distance.ToString("F2") + " inch";
+                distanceText.text = distance.ToString("F2") + " in”";
 
             }
 
-            transform.position =  new Vector3((finalpoint.x + initialpoint.x)/2,(finalpoint.y + initialpoint.y)/2,(finalpoint.z + initialpoint.z)/2);
+
+
+            // Calculate position as midpoint between the two points
+            Vector3 position = (finalpoint + initialpoint) / 2f;
+            transform.position = position;
+
+            //Quaternion lookRot = Quaternion.LookRotation(Camera.main.transform.position, transform.right);
+            //Quaternion targetRotation = Quaternion.LookRotation(finalpoint - initialpoint, Vector3.up);      
+            //directionToFace = new Vector3(targetRotation.eulerAngles.x, targetRotation.eulerAngles.y, lookRot.eulerAngles.z);
+
             transform.LookAt(Camera.main.transform);
         }
-        
+
     }
-}
+        void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            //Gizmos.DrawLine(transform.position, transform.position + transform.right);
+            //Gizmos.DrawLine(Camera.main.transform.position, Camera.main.transform.position + Camera.main.transform.forward);
+        }
+
+    }

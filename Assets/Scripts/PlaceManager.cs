@@ -19,7 +19,7 @@ public class PlaceManager : MonoBehaviour
     public GameObject snapObject=null;
     UIManager uIManager;
 
-    public static bool isCm;
+    public static bool isCm = true;
 
     // Start is called before the first frame update
     void Start()
