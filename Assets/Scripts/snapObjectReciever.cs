@@ -30,7 +30,6 @@ public class snapObjectReciever : MonoBehaviour
         if (other.CompareTag("indicator"))
         {
             placeManager.snapObject = this.gameObject;
-            
         }
     }
     private void OnTriggerExit(Collider other)
@@ -45,6 +44,5 @@ public class snapObjectReciever : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

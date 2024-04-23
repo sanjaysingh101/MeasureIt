@@ -33,12 +33,20 @@ public class Indicator : MonoBehaviour
             Pose hitPose = hits[0].pose;
             transform.position = hitPose.position;
             transform.rotation = hitPose.rotation;
-
+            
             if (!indicatorObject.activeInHierarchy)
             {
                 indicatorObject.SetActive(true);
                 uIManager.addButton.GetComponent<Button>().interactable = true;
+                uIManager.addButton.GetComponent<AddPointButton>().enabled=true;
             }
+            
         }
+
+        #if UNITY_EDITOR
+                indicatorObject.SetActive(true);
+                uIManager.addButton.GetComponent<Button>().interactable = true;
+                uIManager.addButton.GetComponent<AddPointButton>().enabled=true;
+        #endif        
     }
 }

@@ -18,6 +18,8 @@ public class PlaceManager : MonoBehaviour
     public List<PlacedLineRenderer> placedLineRenderers;
     public GameObject snapObject=null;
     UIManager uIManager;
+    public AddPointButton apb;
+    public bool testBool=false;
 
     public static bool isCm = true;
 
@@ -150,7 +152,14 @@ public class PlaceManager : MonoBehaviour
 
         if(snapObject!=null)
         {
-            uIManager.indicatorAnimation.transform.position = Vector3.Lerp(uIManager.indicatorAnimation.transform.position, snapObject.transform.position, 1f);
+            if(apb.longPress)
+            {
+                snapObject.transform.parent.position = uIManager.indicatorAnimation.transform.parent.position;
+            }
+            else
+            {
+                uIManager.indicatorAnimation.transform.position = snapObject.transform.position;
+            }
         }
         else
         {
