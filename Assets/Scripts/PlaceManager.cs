@@ -2,7 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.XR.ARCore;
+using UnityEngine.XR.ARFoundation;
 public class PlaceManager : MonoBehaviour
 {
     [Serializable]
@@ -18,7 +19,6 @@ public class PlaceManager : MonoBehaviour
     public List<PlacedLineRenderer> placedLineRenderers;
     public GameObject snapObject=null;
     UIManager uIManager;
-
     public static bool isCm = true;
 
     // Start is called before the first frame update
