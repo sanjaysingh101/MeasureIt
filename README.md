@@ -1,5 +1,4 @@
 # MeasureIt<br>
-What if we can view and play with our clicked pictures in augmented reality...<br>
 Introducing MeasureIt, An essential augmented reality app for quick and accurate measurements using your device.<br> 
 With a simple point and drag, effortlessly measure objects in your surroundings.<br> 
 Adjust the virtual tape measure for precise measurements, and capture dimensions with ease. Switch between centimeters and inches seamlessly. <br>
